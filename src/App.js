@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import { SearchResultsProvider } from './context/searchResults.context';
+import { NominatedMoviesProvider } from './context/nominatedMovies.context';
+import { NotifyContextProvider } from './context/notify.context';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import ErrorBoundary from './components/ErrorBoundary';
+import SearchInput from './components/SearchInput';
+import SearchResults from './components/SearchResults';
+import NominatedMovies from './components/NominatedMovies';
+import Notify from './components/Notify';
+
+import { AppContainer, ResultsWrapper } from './App.styles';
+
+const App = () => (
+  <AppContainer>
+    <ErrorBoundary>
+      <NotifyContextProvider>
+        <SearchResultsProvider>
+          <NominatedMoviesProvider>
+            <SearchInput />
+            <Notify />
+            <ResultsWrapper>
+              <SearchResults />
+              <NominatedMovies />
+            </ResultsWrapper>
+          </NominatedMoviesProvider>
+        </SearchResultsProvider>
+      </NotifyContextProvider>
+    </ErrorBoundary>
+  </AppContainer>
+);
 
 export default App;
