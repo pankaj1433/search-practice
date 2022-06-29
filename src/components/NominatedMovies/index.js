@@ -1,1 +1,1 @@
-export { default } from './NominatedMovies';
+export { default } from "./NominatedMovies";

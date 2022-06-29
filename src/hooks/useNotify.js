@@ -1,13 +1,13 @@
-import { useNotifyContext } from '../context/notify.context';
+import { useNotifyContext } from "../context/notify.context";
 
 const useNotify = () => {
-    const notifyContext = useNotifyContext()
+  const notifyContext = useNotifyContext();
 
-    if (notifyContext === undefined) {
-        throw new Error('useNotify must be used within a NotifyContextProvider');
-    }
+  if (notifyContext === undefined) {
+    throw new Error("useNotify must be used within a NotifyContextProvider");
+  }
 
-    return notifyContext.setNotification;
-}
+  return notifyContext.setNotification;
+};
 
 export default useNotify;
