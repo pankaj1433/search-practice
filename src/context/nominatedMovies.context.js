@@ -2,10 +2,10 @@ import { createContext, useState, useContext } from "react";
 
 export const NominatedMoviesContext = createContext();
 
-export const NominatedMoviesProvider = ({ children }) => {
+export const NominatedMoviesProvider = ({ children, values }) => {
   const [nominatedMovies, setNominatedMovies] = useState(new Map());
 
-  const value = { nominatedMovies, setNominatedMovies };
+  const value = values || { nominatedMovies, setNominatedMovies };
 
   return (
     <NominatedMoviesContext.Provider value={value}>

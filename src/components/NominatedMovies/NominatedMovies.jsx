@@ -27,14 +27,14 @@ const NominatedMovies = () => {
 
   if (nominatedMovies.size === 0) {
     return (
-      <ResultBox>
+      <ResultBox data-testid="empty-nominated-movies">
         <EmptyResultsWrapper>No Nominated Movies Found!</EmptyResultsWrapper>
       </ResultBox>
     );
   }
 
   return (
-    <ResultBox>
+    <ResultBox data-testid="nominated-movies">
       <BoxTitle>Nominated Movies</BoxTitle>
       <ResultsWrapper onClick={handleRemove}>
         {[...nominatedMovies.keys()].map((imdbID) => {

@@ -2,23 +2,23 @@ import { createContext, useState, useContext } from "react";
 
 export const SearchResultsContext = createContext();
 
-export const SearchResultsProvider = ({ children }) => {
+export const SearchResultsProvider = ({ children, values }) => {
   const [searchResults, setSearchResults] = useState([]);
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(false);
   const [searchValue, setSearchValue] = useState("");
   const [loading, setLoading] = useState(true);
 
-  const value = {
-    searchResults,
-    setSearchResults,
+  const value = values || {
     page,
-    setPage,
+    searchResults,
     hasMore,
-    setHasMore,
     searchValue,
-    setSearchValue,
     loading,
+    setSearchResults,
+    setPage,
+    setHasMore,
+    setSearchValue,
     setLoading,
   };
 

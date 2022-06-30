@@ -13,7 +13,9 @@ const Notify = () => {
     };
   }, [notification, setNotification]);
 
-  return notification ? <NotifyWrapper>{notification}</NotifyWrapper> : null;
+  return notification ? (
+    <NotifyWrapper data-testid="notification">{notification}</NotifyWrapper>
+  ) : null;
 };
 
 export default Notify;

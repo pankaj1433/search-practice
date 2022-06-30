@@ -20,7 +20,7 @@ const SearchResults = () => {
   const { nominatedMovies, setNominatedMovies } = useNominatedMovies();
   const notify = useNotify();
 
-  const HandleLoadMoreClick = useCallback(
+  const handleLoadMoreClick = useCallback(
     () => setPage(page + 1),
     [setPage, page]
   );
@@ -44,7 +44,7 @@ const SearchResults = () => {
 
   if (searchValue === "") {
     return (
-      <ResultBox>
+      <ResultBox data-testid="empty-search-results">
         <EmptyResultsWrapper>
           Search Results will appear here
         </EmptyResultsWrapper>
@@ -53,7 +53,7 @@ const SearchResults = () => {
   }
 
   return (
-    <ResultBox>
+    <ResultBox data-testid="search-results">
       <BoxTitle>Results for "{searchValue}"</BoxTitle>
       {searchResults.length !== 0 ? (
         <ResultsWrapper onClick={handleNominate}>
@@ -61,6 +61,7 @@ const SearchResults = () => {
             <MovieItem key={movie.imdbID}>
               {movie.Title}
               <MovieItemButton
+                data-testid={movie.imdbID}
                 disabled={nominatedMovies.has(movie.imdbID)}
                 data-imdbid={movie.imdbID}
               >
@@ -70,7 +71,10 @@ const SearchResults = () => {
           ))}
           {loading && <div>Loading More Data...</div>}
           {hasMore && !loading && (
-            <LoadMoreButton onClick={HandleLoadMoreClick}>
+            <LoadMoreButton
+              data-testid="load-more-btn"
+              onClick={handleLoadMoreClick}
+            >
               Loading More
             </LoadMoreButton>
           )}

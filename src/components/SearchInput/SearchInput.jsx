@@ -6,7 +6,7 @@ const SearchInput = () => {
   const { handleSearch } = useSearch();
 
   return (
-    <InputWrapper>
+    <InputWrapper data-testid="search-input">
       <Input
         type="text"
         onChange={handleSearch}

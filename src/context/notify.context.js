@@ -2,11 +2,11 @@ import { createContext, useState, useContext } from "react";
 
 export const NotifyContext = createContext();
 
-export const NotifyContextProvider = ({ children }) => {
+export const NotifyContextProvider = ({ children, values }) => {
   const [notification, setNotification] = useState("");
 
   return (
-    <NotifyContext.Provider value={{ notification, setNotification }}>
+    <NotifyContext.Provider value={values || { notification, setNotification }}>
       {children}
     </NotifyContext.Provider>
   );
