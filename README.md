@@ -1,3 +1,11 @@
+# OMDB API Search React Application
+## Walkthrough
+
+#### [Application walkthrough](https://share.vidyard.com/watch/onpHNDyfuaHokM6jf5rA5v?)
+
+#### [Code walkthrough](https://share.vidyard.com/watch/322jhHpeKgZdfMayYfb2tg?)
+
+#### [Code architecture walkthrough](https://share.vidyard.com/watch/DBR6TqJhZLSR8stkN3k333?)
 ## Available Scripts
 
 In the project directory, you can run:

@@ -41,7 +41,7 @@ const NominatedMovies = () => {
           const movie = nominatedMovies.get(imdbID);
           return (
             <MovieItem key={imdbID}>
-              {movie.Title}
+              {`${movie.Title} (${movie.Year})`}
               <MovieItemButton data-imdbid={movie.imdbID}>
                 Remove
               </MovieItemButton>

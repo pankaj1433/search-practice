@@ -59,7 +59,7 @@ const SearchResults = () => {
         <ResultsWrapper onClick={handleNominate}>
           {searchResults.map((movie) => (
             <MovieItem key={movie.imdbID}>
-              {movie.Title}
+              {`${movie.Title} (${movie.Year})`}
               <MovieItemButton
                 data-testid={movie.imdbID}
                 disabled={nominatedMovies.has(movie.imdbID)}
