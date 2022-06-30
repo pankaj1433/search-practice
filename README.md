@@ -2,18 +2,22 @@
 
 In the project directory, you can run:
 
-##### `npm start`
+##### `yarn start`
 
-Runs the app in the development mode.\
+Runs the app in the development mode.
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-##### `npm test`
+##### `yarn test`
 
-Launches the test runner.\
+Launches the test runner.
 
-##### `npm run build`
+##### `yarn build`
 
-Builds the app for production to the `build` folder.\
+Builds the app for production to the `build` folder.
+
+##### `yarn format`
+
+Formats prettier.
 
 ## The Challenge
 
